@@ -11,4 +11,4 @@ Exercícios do Curso Técnico em Desenvolvimento WEB do IFRN. Estão no Github p
 
 ## Autor
 
-** Manoel Barros **
+* **Manoel Barros**
