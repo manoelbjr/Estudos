@@ -8,3 +8,7 @@ Exercícios do Curso Técnico em Desenvolvimento WEB do IFRN. Estão no Github p
 > Efetue o Download do DevKit do Ruby  em https://rubyinstaller.org/downloads/
 ### Linux
 > apt-get install ruby
+
+## Autor
+
+** Manoel Barros **
