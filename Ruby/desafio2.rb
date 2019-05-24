@@ -29,3 +29,162 @@ load 'libdesafio2.rb' # Não altere essa linha
 ###############################################################
 ### DIGITE ABAIXO A SUA SOLUÇÃO PARA A ATIVIDADE DESFAIO II ###
 ###############################################################
+def checkValidity(value)
+    if (value==1 || value==3)
+        return false
+    else
+        return true
+    end
+end
+
+def countHundred(value)
+    count = 0
+        while value>=100
+            count = count +1
+            value = value-100
+        end
+    return count
+end
+def countFifty(value)
+    count = 0
+        while value>=50
+            count = count +1
+            value = value-50
+        end
+    return count
+end
+def countTwenty(value)
+    count = 0
+        while value>=20
+            count = count +1
+            value = value-20
+        end
+    return count
+end
+def countTen(value)
+    count = 0
+        while value>=10
+            count = count +1
+            value = value-10
+        end
+    return count
+end
+def countFive(value)
+    count = 0
+        while value>=5
+            count = count +1
+            value = value-5
+        end
+    return count
+end
+def countTwo(value)
+    count = 0
+        while value>=2
+            count = count +1
+            value = value-2\
+        end
+    return count
+end
+
+def entregar_cedulas(sake)
+    money_notes = {
+        "100" => 0,
+        "50" => 0,
+        "20" => 0,
+        "10" => 0,
+        "5" => 0,
+        "2" => 0
+    }
+    current = sake
+    if sake<1 
+        getOut = true
+    elsif checkValidity(sake)
+        
+        money_notes["100"] = countHundred(current)
+        current = current - money_notes["100"]*100
+        money_notes["50"] = countFifty(current)
+        current = current - money_notes["50"]*50
+        money_notes["20"] = countTwenty(current)
+        current = current - money_notes["20"]*20
+        money_notes["10"] = countTen(current)
+        current = current - money_notes["10"]*10
+        money_notes["5"] = countFive(current)
+        current = current - money_notes["5"]*5
+        money_notes["2"] = countTwo(current)
+        current = current - money_notes["2"]*2
+
+        puts "Voce sacou R$ #{sake} da seguinte forma: "
+        money_notes.each do |value, quantity|
+            if quantity>0
+                puts "#{quantity.to_s} notas de R$ #{value} "
+            end
+        end
+        if current>1
+            puts "R$ #{current} reais ficarão na sua conta para saque posterior."
+        end
+
+    else
+        puts "Valor inválido."
+    end
+end
+print "+-------------------------------------+\n"
+print "|--- GERENCIAMENTO CAIXA ELETRÔNICO --|\n"
+print "+-------------------------------------+\n"
+print "Informe o numero da sua conta: \n"
+getOut = false
+accountNumber = gets.chomp.to_i
+
+if localizar_conta(accountNumber) == nil
+    print "Conta não Localizada"
+else
+    print "Qual operação deseja fazer?\n"
+    print "1 - Ver saldo\n"
+    print "2 - Depositar\n"
+    print "3 - Sacar\n"
+    print "4 - Transferir\n"
+    option = gets.chomp.to_i
+
+    if option == 1
+        print "SEU SALDO ATUAL É DE R$ "
+        print @contas[accountNumber].saldo
+    end
+    if option == 2
+        print "Quanto gostaria de depositar? \n "
+        deposit = gets.chomp.to_i
+        @contas[accountNumber].depositar(deposit)
+        print "Deposito realizado com sucesso. Seu novo saldo é de R$ "
+        print @contas[accountNumber].saldo
+    end
+    if option == 3
+        print "Quanto deseja sacar?"
+        saque = gets.chomp.to_i
+        # se tem saldo...
+        if @contas[accountNumber].sacar(saque)
+            entregar_cedulas(saque)
+        else
+            print "SALDO INSUFICIENTE\n"
+        end
+    end
+    if option == 4
+        print  "Digite o número da conta de destino\n"
+        destinationAccount = gets.chomp.to_i
+        if localizar_conta(destinationAccount) == nil
+            print "Conta de destino não localizada!"
+        else
+            print "Quanto deseja Transferir? \n"
+            transference =gets.chomp.to_i
+            if @contas[accountNumber].sacar(transference)
+                @contas[destinationAccount].depositar(transference)
+                print "Deposito realizado com sucesso. Seu novo saldo é de R$ "
+                print @contas[accountNumber].saldo
+            else
+                print "SALDO INSUFICIENTE\n"
+            end
+        end
+    end
+    if option<1 || option>4
+        print "Operação Inválida"
+    end
+end
+
+#entregar_cedulas(250)
