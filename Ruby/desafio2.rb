@@ -137,6 +137,7 @@ accountNumber = gets.chomp.to_i
 if localizar_conta(accountNumber) == nil
     print "Conta não Localizada"
 else
+
     print "Qual operação deseja fazer?\n"
     print "1 - Ver saldo\n"
     print "2 - Depositar\n"
