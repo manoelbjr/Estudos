@@ -131,61 +131,65 @@ print "+-------------------------------------+\n"
 print "|--- GERENCIAMENTO CAIXA ELETRÔNICO --|\n"
 print "+-------------------------------------+\n"
 print "Informe o numero da sua conta: \n"
-getOut = false
+#getOut = false
 accountNumber = gets.chomp.to_i
+repeat = false
 
-if localizar_conta(accountNumber) == nil
-    print "Conta não Localizada"
-else
+while !repeat
+    if localizar_conta(accountNumber) == nil
+        print "Conta não Localizada"    
+    else
 
-    print "Qual operação deseja fazer?\n"
-    print "1 - Ver saldo\n"
-    print "2 - Depositar\n"
-    print "3 - Sacar\n"
-    print "4 - Transferir\n"
-    option = gets.chomp.to_i
+        print "Qual operação deseja fazer?\n"
+        print "1 - Ver saldo\n"
+        print "2 - Depositar\n"
+        print "3 - Sacar\n"
+        print "4 - Transferir\n"
+        option = gets.chomp.to_i
 
-    if option == 1
-        print "SEU SALDO ATUAL É DE R$ "
-        print @contas[accountNumber].saldo
-    end
-    if option == 2
-        print "Quanto gostaria de depositar? \n "
-        deposit = gets.chomp.to_i
-        @contas[accountNumber].depositar(deposit)
-        print "Deposito realizado com sucesso. Seu novo saldo é de R$ "
-        print @contas[accountNumber].saldo
-    end
-    if option == 3
-        print "Quanto deseja sacar?"
-        saque = gets.chomp.to_i
-        # se tem saldo...
-        if @contas[accountNumber].sacar(saque)
-            entregar_cedulas(saque)
-        else
-            print "SALDO INSUFICIENTE\n"
+        if option == 1
+            print "SEU SALDO ATUAL É DE R$ "
+            print @contas[accountNumber].saldo
         end
-    end
-    if option == 4
-        print  "Digite o número da conta de destino\n"
-        destinationAccount = gets.chomp.to_i
-        if localizar_conta(destinationAccount) == nil
-            print "Conta de destino não localizada!"
-        else
-            print "Quanto deseja Transferir? \n"
-            transference =gets.chomp.to_i
-            if @contas[accountNumber].sacar(transference)
-                @contas[destinationAccount].depositar(transference)
-                print "Deposito realizado com sucesso. Seu novo saldo é de R$ "
-                print @contas[accountNumber].saldo
+        if option == 2
+            print "Quanto gostaria de depositar? \n "
+            deposit = gets.chomp.to_i
+            @contas[accountNumber].depositar(deposit)
+            print "Deposito realizado com sucesso. Seu novo saldo é de R$ "
+            print @contas[accountNumber].saldo
+        end
+        if option == 3
+            print "Quanto deseja sacar?"
+            saque = gets.chomp.to_i
+            # se tem saldo...
+            if @contas[accountNumber].sacar(saque)
+                entregar_cedulas(saque)
             else
                 print "SALDO INSUFICIENTE\n"
             end
         end
-    end
-    if option<1 || option>4
-        print "Operação Inválida"
+        if option == 4
+            print  "Digite o número da conta de destino\n"
+            destinationAccount = gets.chomp.to_i
+            if localizar_conta(destinationAccount) == nil
+                print "Conta de destino não localizada!"
+            else
+                print "Quanto deseja Transferir? \n"
+                transference =gets.chomp.to_i
+                if @contas[accountNumber].sacar(transference)
+                    @contas[destinationAccount].depositar(transference)
+                    print "Deposito realizado com sucesso. Seu novo saldo é de R$ "
+                    print @contas[accountNumber].saldo
+                else
+                    print "SALDO INSUFICIENTE\n"
+                end
+            end
+        end
+        if option<1 || option>4
+            if option == 0 
+               break 
+            end 
+            print "Operação Inválida"
+        end
     end
 end
-
-#entregar_cedulas(250)
