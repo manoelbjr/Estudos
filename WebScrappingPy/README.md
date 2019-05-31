@@ -22,6 +22,13 @@ Segue detalhamento do que foi solicitado. Abaixo, estão marcados apenas os iten
 
 **OBS:** O 4º item foi cumprido parcialmente. Consegui implementar o _Model_ da tabela, criei a tabela, ficou faltando o código que realiza os _INSERTS_.
 
+|  **Id**  |  new_title  |  url  |
+|----------|-------------|-------|
+| Autoincrement| _Titulo1_| _Url1_|
+| ""|_Titulo2_|_Url2_|
+|...|...|...
+
+
 ### Autor
 
 * Manoel Barros Jr.
