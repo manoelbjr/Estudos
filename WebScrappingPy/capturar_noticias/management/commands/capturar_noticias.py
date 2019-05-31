@@ -48,7 +48,7 @@ class Command(BaseCommand):
             if lista[index+1] == "Image" : listaUrl.append(lista[index])
             position3 +=1
 
-        # ---- Apenas para consultar se está funcionando corretamente----#
+        # ---- Apenas para consultar se está funcionando corretamente----#cd
         print(listaTitulos)
         print(listaUrl)
         # ---------------------------------------------------------------#
