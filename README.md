@@ -2,6 +2,11 @@
 
 Neste repositório estão todos os projetos de faculdade e do curso técnico, incluindo projetos de cunho pessoal desenvolvidos também como forma de prática.
 
+## *Disclaimer* ##
+
+> Os Projetos dessa pasta talvez não sigam as regras mais adequadas de desenvolvimento. 
+> Esse repositório serve para que, futuramente, eu possa relembrar de onde comecei :)
+
 ## Detalhes dos repositórios [ Em Atualização ]
 
 * **Ruby**: Exercícios da disciplina POO do curso Técnico em Desenvolvimento WEB - IFRN
