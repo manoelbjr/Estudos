@@ -13,7 +13,7 @@ Neste repositório estão todos os projetos de faculdade e do curso técnico, in
 * [**WebScrappingPy**](https://github.com/manoelbjr/Estudos/tree/master/WebScrappingPy): Aplicação em Python + Django para salvar capturar as notícias do site [Tecmundo](https://www.tecmundo.com.br)
 * [**Banco de Dados**](https://github.com/manoelbjr/Estudos/tree/master/Banco%20de%20Dados): Projeto de Banco de Dados utilizando PostgreSQL. Regras de negócio implementadas no banco.
 * [**Esteganografia e RSA**](https://github.com/manoelbjr/Estudos/tree/master/Esteganografia%20e%20RSA): Projeto final da disciplina FMC1. 
-Implementada esteganografia + algoritmo de criptografia RSA. C++ sem biblioteca, escovando bits na unha.
+Implementada esteganografia + algoritmo de criptografia RSA. Linguagem C++, sem biblioteca, escovando bits na unha.
 
 ## Autor
 
