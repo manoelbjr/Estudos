@@ -1,5 +1,17 @@
 # Projeto da Disciplina Banco de Dados
 
+## Tecnologia e Conceitos aplicados
+
+Utilizado o SGBD PostgreSQL
+
+- [x] Regra de negócio implementada no BD atraves de Triggers e Procedures;
+- [x] Normalização de Banco;
+- [x] Chaves compostas;
+- [x] Função com expressão regular para checagem do CPF;
+- [x] Função com expressão regular para checagem de padrão de email;
+- [x] RegEx para checagem de formato de usuário
+- [x] Funções em PlpgSQL atendendo conceitos de *ACID*
+
 ## Introdução:
 
 Este Projeto foi elaborado como trabalho de conclusão da disciplina Banco de Dados do Instituto Metrópole Digital. Trata-se de uma aplicação destinado a um sistema de gestão de chamados e incidentes de Ti para uma empresa.
@@ -17,14 +29,3 @@ Cada chamado possui uma ou mais ações, que indicam o que foi executado pela(s)
 Ao encerrar o chamado, o usuário receberá uma pesquisa de satisfação. Todos os chamados encerrados têm uma pesquisa de satisfação associada.
 As regras de negócio da aplicação foram todas implementadas no código SQL. Essas regras estão detalhadas através de comentários dos códigos, verificar a seção Script de Criação dos Elementos do BD.
 
-## Detalhes da Tecnologia e Conceitos aplicados
-
-Utilizado o SGBD PostgreSQL
-
-- [x] Regra de negócio implementada no BD atraves de Triggers e Procedures;
-- [x] Normalização de Banco;
-- [x] Chaves compostas;
-- [x] Função com expressão regular para checagem do CPF;
-- [x] Função com expressão regular para checagem de padrão de email;
-- [x] RegEx para checagem de formato de usuário
-- [x] Funções em PlpgSQL atendendo conceitos de *ACID*
