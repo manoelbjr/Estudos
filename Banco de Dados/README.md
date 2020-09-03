@@ -21,10 +21,10 @@ As regras de negócio da aplicação foram todas implementadas no código SQL. E
 
 Utilizado o SGBD PostgreSQL
 
--[x] Regra de negócio implementada no BD atraves de Triggers e Procedures;
--[x] Normalização de Banco;
--[x] Chaves compostas;
--[x] Função com expressão regular para checagem do CPF;
--[x] Função com expressão regular para checagem de padrão de email;
--[x] RegEx para checagem de formato de usuário
--[x] Funções em PlpgSQL atendendo conceitos de *ACID*
+- [x] Regra de negócio implementada no BD atraves de Triggers e Procedures;
+- [x] Normalização de Banco;
+- [x] Chaves compostas;
+- [x] Função com expressão regular para checagem do CPF;
+- [x] Função com expressão regular para checagem de padrão de email;
+- [x] RegEx para checagem de formato de usuário
+- [x] Funções em PlpgSQL atendendo conceitos de *ACID*
